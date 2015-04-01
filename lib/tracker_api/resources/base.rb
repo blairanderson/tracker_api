@@ -7,12 +7,12 @@ module TrackerApi
     module Base
       extend ActiveSupport::Concern
 
-      include ActiveModel::Model
+      # include ActiveModel::Model
       include ActiveModel::Dirty
 
       included do
         include Virtus.model
-        include OverrideAttributes
+        # include OverrideAttributes
 
         attribute :id, Integer
 
@@ -20,7 +20,7 @@ module TrackerApi
           super
 
           # always reset dirty tracking on initialize
-          clear_changes_information
+          # reset_changes
         end
 
         private
